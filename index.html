@@ -110,6 +110,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .photo-band .dash::before, .photo-band .dash::after { color: var(--on-photo); }
 .photo-band .lead { color: var(--on-photo); opacity: .85; }
 form { max-width: 520px; margin: 0 auto; display: grid; gap: 26px; text-align: left; }
+.field { display: grid; gap: 4px; }
 label { display: grid; gap: 4px; font-size: .66rem; letter-spacing: .26em; text-transform: uppercase; }
 input, select, textarea { font: 300 1rem var(--f-body); color: var(--on-photo); background: transparent; border: 0; border-bottom: 1px solid rgba(255, 255, 255, .7); padding: 8px 0; width: 100%; border-radius: 0; }
 select option { color: #222; }
@@ -223,14 +224,14 @@ input[type="radio"] { -webkit-appearance: radio; appearance: auto; }
   <form id="rsvp-form" name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="rsvp">
     <p hidden><label>No llenar<input name="bot-field"></label></p>
-    <label for="r-name">Nombre completo<input id="r-name" name="nombre" required autocomplete="name"></label>
+    <div class="field"><label for="r-name">Nombre completo</label><input id="r-name" name="nombre" required autocomplete="name"></div>
     <div class="att" role="radiogroup" aria-label="Asistencia">
       <label for="r-yes"><input type="radio" id="r-yes" name="asistencia" value="si" checked> Asistiré</label>
       <label for="r-no"><input type="radio" id="r-no" name="asistencia" value="no"> No podré asistir</label>
     </div>
-    <label for="r-guests">Número de personas<select id="r-guests" name="personas"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
-    <label for="r-diet">Restricciones de comida<input id="r-diet" name="restricciones" placeholder="Vegetariano, sin gluten…"></label>
-    <label for="r-msg">Mensaje para los novios<textarea id="r-msg" name="mensaje" rows="2"></textarea></label>
+    <div class="field"><label for="r-guests">Número de personas</label><select id="r-guests" name="personas"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+    <div class="field"><label for="r-diet">Restricciones de comida</label><input id="r-diet" name="restricciones" placeholder="Vegetariano, sin gluten…"></div>
+    <div class="field"><label for="r-msg">Mensaje para los novios</label><textarea id="r-msg" name="mensaje" rows="2"></textarea></div>
     <button type="submit">Enviar</button>
   </form>
   <p class="thanks" id="thanks" hidden>¡Gracias!</p>
